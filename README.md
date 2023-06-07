@@ -4,12 +4,11 @@ TILE PUZZLE SOLVER
 
 This program was created to solve simple tile-fitting puzzles, in which the goal is to fit all available tiles onto a board. A proper description of the puzzle is as follows:
 
-Given:
+> Given:
 - A board (called a "grid" in the program), represented by a matrix of characters, where '-' indicates an empty cell and '#' indicates a blocked cell.
 - A set of "tiles":
-  - Every tile is comprised of a series of orthogonally adjacent cells, represented by a matrix where '-' denotes an empty (not contained in the tile) cell and
-    '#' represents a piece of the tile.
--Find:
+  - Every tile is comprised of a series of orthogonally adjacent cells, represented by a matrix where '-' denotes an empty (not contained in the tile) cell and '#' represents a piece of the tile.
+> Find:
   - A way to fit every tile into the board such that:
     - No tile intersects a blocked cell of the board.
     - No tile intersects another tile.
