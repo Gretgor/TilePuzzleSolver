@@ -9,13 +9,13 @@ Given:
 - A set of "tiles":
   - Every tile is comprised of a series of orthogonally adjacent cells, represented by a matrix where '-' denotes an empty (not contained in the tile) cell and
     '#' represents a piece of the tile.
-Find:
-- A way to fit every tile into the board such that:
-  - No tile intersects a blocked cell of the board.
-  - No tile intersects another tile.
-  - The game is discrete: cells are either occupied or unoccupied, no half-occupation allowed. The number of cells of a tile is equal to the number of cells it occupies in the grid.
-  - Tiles can be turned 90, 180 and 270 degrees, and also mirrored, but cannot be placed diagonally.
-    - Specific tiles can be set to "not mirrorable" in case it is a necessary rule, or to save time in case the mirror forms are isomorphic to normal forms.
+-Find:
+  - A way to fit every tile into the board such that:
+    - No tile intersects a blocked cell of the board.
+    - No tile intersects another tile.
+    - The game is discrete: cells are either occupied or unoccupied, no half-occupation allowed. The number of cells of a tile is equal to the number of cells it occupies in the grid.
+    - Tiles can be turned 90, 180 and 270 degrees, and also mirrored, but cannot be placed diagonally.
+      - Specific tiles can be set to "not mirrorable" in case it is a necessary rule, or to save time in case the mirror forms are isomorphic to normal forms.
 
 =====
 PROGRAM STRUCTURE
