@@ -105,6 +105,7 @@ class tileProblem():
         self.verbose = True
         self.tile_list = self.order_tiles(tile_list)
         self.find_all = find_all
+        self.solutions = set()
 
     def order_tiles(self, tile_list):
         """
@@ -131,6 +132,15 @@ class tileProblem():
             print(''.join(line))
         print('')
 
+    def hashable_repr(self):
+        """
+        Creates a hashable string representation
+        """
+        string = ""
+        for line in self.game:
+            string += ''.join(line)
+        return string
+
     def is_it_possible(self):
         """
         Dummy function for bounding conditions.
@@ -154,6 +164,9 @@ class tileProblem():
             if not self.find_all:
                 return True
             else:
+                if self.hashable_repr() in self.solutions:
+                    return False
+                self.solutions.add(self.hashable_repr())
                 print('')
                 print("SOLUTION FOUND: =========")
                 self.print_game()
@@ -321,6 +334,6 @@ if __name__ == '__main__':
         tile = singleTile(new_piece)
         usable_pieces.append(tile)
 
-    problem = tileProblem(usable_pieces, usable_grid, True)
+    problem = tileProblem(usable_pieces, usable_grid, find_all = True)
     problem.print_all_tiles()
-    problem.solve(verbose = False)
+    problem.solve()
