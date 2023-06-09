@@ -90,7 +90,7 @@ class tileProblem():
     Class containing the tile problem and solver
     """
     
-    def __init__(self, tile_list, grid):
+    def __init__(self, tile_list, grid, find_all = False):
         """
         Class attributes:
         -tile_symbols: symbols that will be printed in lieu of '#' when tiles are placed
@@ -104,6 +104,7 @@ class tileProblem():
         self.game = deepcopy(grid)
         self.verbose = True
         self.tile_list = self.order_tiles(tile_list)
+        self.find_all = find_all
 
     def order_tiles(self, tile_list):
         """
@@ -150,7 +151,15 @@ class tileProblem():
             self.print_game()
         if index >= len(self.tile_list):
             # all tiles are in, problem solved
-            return True
+            if not self.find_all:
+                return True
+            else:
+                print('')
+                print("SOLUTION FOUND: =========")
+                self.print_game()
+                print("==============")
+                print('')
+                return False
 
         if not self.is_it_possible():
             return False
@@ -312,6 +321,6 @@ if __name__ == '__main__':
         tile = singleTile(new_piece)
         usable_pieces.append(tile)
 
-    problem = tileProblem(usable_pieces, usable_grid)
+    problem = tileProblem(usable_pieces, usable_grid, True)
     problem.print_all_tiles()
-    problem.solve()
+    problem.solve(verbose = False)
