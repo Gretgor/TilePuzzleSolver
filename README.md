@@ -32,7 +32,7 @@ File "main_class.py": ccontains the main tile and problem classes, as well as th
 SUBCLASSES
 ====
 
-> File "common_divisor.py": a subclass of the tileProblem class, called commonDivisorProblem, with a bounding heuristic associated with a common divisor.
+> File "common_divisor.py": a subclass of the tileProblem class, called **commonDivisorProblem**, with a bounding heuristic associated with a common divisor.
 
 If a tile problem is such that a common divisor is known for the sizes of the tiles, and the total number of empty spaces in the grid is equal to the sum of the number of cells in every tile, then it is possible to apply the following bounding heuristic:
 - If the current state of the game is such that there exists a connected component of empty spaces whose length is not a multiple of the known common divisor, then it is impossible to reach a solved state without replacing or moving an already placed tile.
