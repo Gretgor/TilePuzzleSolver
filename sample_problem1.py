@@ -95,6 +95,6 @@ for piece in tiles:
     tile = singleTile(new_piece)
     usable_pieces.append(tile)
 
-problem = commonDivisorProblem(usable_pieces, usable_grid, 8)
+problem = commonDivisorProblem(usable_pieces, usable_grid, 8, find_all = True)
 problem.print_all_tiles()
-problem.solve()
+problem.solve(verbose = False)

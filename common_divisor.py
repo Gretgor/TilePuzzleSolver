@@ -9,8 +9,8 @@ class commonDivisorProblem(tileProblem):
     as otherwise, you may get a false negative solution
     """
 
-    def __init__(self, tile_list, grid, common_divisor = 1):
-        super().__init__(tile_list, grid)
+    def __init__(self, tile_list, grid, common_divisor = 1, find_all = False):
+        super().__init__(tile_list, grid, find_all)
         self.common_divisor = common_divisor
 
     def is_it_possible(self):
